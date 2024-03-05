@@ -1,0 +1,2 @@
+https://submition10-tr6fmdzhgtmchn3vktqpq9.streamlit.app/
+http://localhost:8501/
