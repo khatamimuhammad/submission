@@ -1,2 +1,1 @@
 https://submission-hdmqz6bhopalys2xcbzbyn.streamlit.app/
-http://localhost:8501/
