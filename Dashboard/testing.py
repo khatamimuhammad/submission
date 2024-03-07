@@ -16,6 +16,10 @@ month = st.sidebar.selectbox('Pilih Bulan', df['month'].unique())
 # Filter data berdasarkan pemilihan tahun dan bulan
 filtered_df = df[(df['year'] == year) & (df['month'] == month)]
 
+# Calculate yearly and monthly means
+yearly_mean = df.groupby('year').mean()
+monthly_mean = df.groupby('month').mean()
+
 # Menampilkan informasi umum dataset
 st.subheader('Informasi Umum Dataset:')
 st.write(df.info())
