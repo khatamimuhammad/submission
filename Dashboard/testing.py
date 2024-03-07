@@ -22,26 +22,24 @@ st.write(df.info())
 
 # Visualisasi distribusi PM2.5
 st.subheader('Distribusi PM2.5:')
-plt.figure(figsize=(10, 6))
-sns.histplot(df['PM2.5'], kde=True, bins=30, color='blue')
-st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.histplot(df['PM2.5'], kde=True, bins=30, color='blue', ax=ax)
+st.pyplot(fig)
 
 # Visualisasi rata-rata kualitas udara dari tahun ke tahun
 st.subheader('Tren Rata-rata Kualitas Udara dari Tahun ke Tahun:')
-yearly_mean = df.groupby('year').mean()
-plt.figure(figsize=(10, 6))
-sns.lineplot(data=yearly_mean[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']])
-st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.lineplot(data=yearly_mean[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']], ax=ax)
+st.pyplot(fig)
 
 # Visualisasi pola musiman kualitas udara
 st.subheader('Pola Musiman Kualitas Udara:')
-monthly_mean = df.groupby('month').mean()
-plt.figure(figsize=(10, 6))
-sns.lineplot(data=monthly_mean[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']])
-st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.lineplot(data=monthly_mean[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']], ax=ax)
+st.pyplot(fig)
 
 # Visualisasi pola perubahan kualitas udara selama hari tertentu
 st.subheader('Pola Perubahan PM2.5 Selama Hari:')
-plt.figure(figsize=(10, 6))
-sns.lineplot(data=filtered_df, x='hour', y='PM2.5')
-st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.lineplot(data=filtered_df, x='hour', y='PM2.5', ax=ax)
+st.pyplot(fig)
